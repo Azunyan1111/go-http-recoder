@@ -48,6 +48,7 @@ func main() {
 			}
 			rowFilePath += "/" + a
 		}
+		rowFilePath = strings.ReplaceAll(rowFilePath,":","")
 		// フォルダの作成
 		fmt.Println(rowFilePath)
 		// ファイル存在確認

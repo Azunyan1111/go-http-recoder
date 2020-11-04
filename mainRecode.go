@@ -51,6 +51,7 @@ func main() {
 			}
 			rowFilePath += "/" + a
 		}
+		rowFilePath = strings.ReplaceAll(rowFilePath,":","")
 		// フォルダの作成
 		fmt.Println(rowFilePath)
 		err := os.MkdirAll(strings.Join(strings.Split(rowFilePath, "/")[:len(strings.Split(rowFilePath, "/"))-1], "/"), 0755)
