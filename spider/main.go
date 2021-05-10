@@ -95,9 +95,11 @@ func GetUrls(u string,c *http.Client,isSubDomain bool){
 	if err != nil{
 		panic(err)
 	}
-	// ゴミパスを破棄する
+	// ゴミパスを修正して送り出す
 	if path.Scheme == ""{
 		log.Println("Error:",u)
+		path.Scheme = "https"
+		GetUrls(path.String(),c,isSubDomain)
 		return
 	}
 
